@@ -4,7 +4,7 @@ belajar mysql
 
 
 
-----------------------------------------------------------------------------------------------
+---------------------------------------------------
 conection.php
 $conect = mysql_connect('localhost', 'root','pasword','nama file data base')
 
@@ -75,11 +75,16 @@ $results = mysqli_fetch_all($query, MYSQLI_ASSOC);
     </table>
 </body>
 </html>
-------------------------------------------------------------------------
-Setelah membuat link untuk tambah data seperti gambar diatas, 
-sekarang kita buat file baru dengan nama add.php, kemudian masukan
-kode di bawah ini untuk membuat formnya.
--------------------------------------------------------------------------
+___________________________________________
+Setelah membuat link 
+untuk tambah data seperti 
+gambar diatas, 
+sekarang kita buat file 
+baru dengan nama add.php, 
+kemudian masukan
+kode di bawah ini untuk
+membuat formnya.
+----------------------------------------------
 <html>
     <form action="insert.php" method="post">
         <label>Nama</label><br/>
@@ -103,7 +108,7 @@ kode di bawah ini untuk membuat formnya.
         </button type="submit">Tambah</button>
     </form>
 </html>
--------------------------------------------------------------------------
+-----------------------------------------------
 
 Insert Data
 
@@ -125,30 +130,35 @@ if($insert)
 else
     echo 'Input data gagal'; //jika gagal akan keluar pesan tersebut
 Sekarang kita coba buka localhost/latihan-crud/add.php kemudian inputka
----------------------------------------------------------------------------------------------------------------------------
-
+---------------------------------------------------------------
 Update Data
 
 Untuk melakukan update data sebenernya logic nya sama seperti yang sudah kita pelajari 
 sebelumnya untuk melakukan edit data pada phpmyadmin, dimana kita d
 apat mengedit data satu persatu sesuai dengan id datanya.
 
-Yang perlu kita buat pertama adalah link untuk edit data,
-kita buka file list.php kemudian kita tambahkan judul baru 
-pada tabel dengan nama pilihan dimana didalamnya terdapat link edt.
-=======================================================================================
+Yang perlu kita buat pertama adalah
+ link untuk edit data,
+kita buka file list.php kemudian
+ kita tambahkan judul baru 
+pada tabel dengan nama pilihan
+ dimana didalamnya terdapat link edt.
+__________________________________________________________
 <td>
    <a href="edit.php?id=<?php echo $result['id']?>">Edit</a> 
 </td>
 
 
 --------------------------------------------------
-Kode diatas digunakan untuk membuat link edit, dimana ketika di klik akan di
-arahkan ke edit.php yang dimana setiap link tersebut menyimpan data spesifik 
-id dari setiap data yang nantinya dapat kita olah pada file edit.php.
-----------------------------------------------------------
+Kode diatas digunakan untuk membuat link
+edit, dimana ketika di klik akan di
+arahkan ke edit.php yang dimana 
+setiap link tersebut menyimpan data spesifik 
+id dari setiap data yang 
+nantinya dapat kita olah pada file edit.php.
+-------------------------------------------------------
 Kemudian tambahkan kode diatas kedalam file list.php .
-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------
 <?php 
 
 include ('connection.php'); 
@@ -184,15 +194,20 @@ $results = mysqli_fetch_all($query, MYSQLI_ASSOC);
     </table>
 </body>
 </html>
------------------------------------------------------------------------------------------------------------------------------
-Jika kita lihat pada gambar diatas maka sekarang sudah terdapat link edit
-dimana dimana setiap link tersebut menyimpan id sesuai dengan datanya, 
-seperti dapat kita lihat pada bagian pojok kiri bawah pada gambar diatas.
---------------------------------------------------------------------------------------------------------------------------------
-Selanjutnya kita buat file dengan nama edit.php dimana nantinya
-data yang akan kita edit di tampilkan dalam form edit ini
-------------------------------------------------------------------------------------
-<?php 
+--------------------------------------------
+Jika kita lihat pada gambar diatas
+maka sekarang sudah terdapat link edit
+dimana dimana setiap link tersebut
+menyimpan id sesuai dengan datanya, 
+seperti dapat kita lihat pada bagian
+pojok kiri bawah pada gambar diatas.
+----------------------------------------------
+Selanjutnya kita buat file 
+nama edit.php dimana nantinya
+data yang akan kita edit di 
+tampilkan dalam form edit ini
+-----------------------------------------
+
 
 include('connection.php');
 
@@ -228,10 +243,14 @@ $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
         </button type="submit">Perbaharui</button>
     </form>
 </html>
---------------------------------------------------------------------------------------------------------------------------
-Nah sekarang kita perlu membuat handler untuk menyimpan file yang sudah diisikan pada 
-form edit kedalam database, kita buat file update.php, kemudian masukan kode seperti dibawah ini.
---------------------------------------------------------------------------------------------------
+-------------------------------------------
+Nah sekarang kita perlu membuat handler
+untuk menyimpan file yang sudah diisikan
+pada 
+form edit kedalam database, kita buat 
+file update.php, kemudian 
+masukan kode seperti dibawah ini.
+-------------------------------------------
 <?php
 
 include('connection.php'); // Mengkoneksikan dengan database
@@ -250,12 +269,19 @@ if($update)
 else
     echo 'Input data gagal'; // Jika gagal akan keluar pesan tersebut
 ?>
----------------------------------------------------------------------------------------------------------
+----------------------------------------------------
 Delete Data
-Setelah kita sudah berhasil menambahkan fitur update sekarang kita akan tambahkan fitur delete , dimana sebenarnya konsepnya tidak jauh berbeda dengan update data karena kita perlu mengirim data spesifik dari data yang akan kita hapus.
+Setelah kita sudah berhasil menambahkan 
+fitur update sekarang kita akan tambahkan
+fitur delete , dimana sebenarnya konsepnya 
+tidak jauh berbeda dengan update 
+data karena kita perlu mengirim
+data spesifik dari data yang akan kita hapus.
 
-Langsung saja, yang perlu kita buat adalah menambahkan link delete pada file list.php.
-------------------------------------------------------------------------------------------------------------
+Langsung saja, yang perlu kita 
+buat adalah menambahkan 
+link delete pada file list.php.
+----------------------------------------
 <?php 
 
 include ('connection.php'); 
@@ -293,10 +319,14 @@ $results = mysqli_fetch_all($query, MYSQLI_ASSOC);
     </table>
 </body>
 </html>
--------------------------------------------------------------------------------------------------------------------------------------------
-Jika sudah menambahkan link delete, sekarang kita perlu membuat handler untuk menghapus data 
-dari database, kita buat file dengan nama delete.php masukan kode dibawah ini.
-------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------
+Jika sudah menambahkan link delete,
+sekarang kita perlu 
+handler untuk menghapus data 
+dari database, kita buat
+file dengan nama delete
+.php masukan kode dibawah ini.
+-------------------------------------------
 <?php
 
 include('connection.php');//mengkoneksikan database
@@ -309,5 +339,4 @@ if($delete)
     header('Location : list.php'); 
 else
     echo 'Delete data gagal';
-    --------------------------------------------------------------------------------------------------------------------------
-
+    ----------------------------------------
