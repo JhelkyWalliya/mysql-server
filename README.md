@@ -2,14 +2,58 @@
 belajar mysql 
 .....................
 contoh penambahan tambah pada my dql data 
-............
-Update karyawan set nama='David', alamat='Bandung' where id='david';
+...............///////////////
+Update karyawan set nama='David',alamat='Bandung' where id='david';
 
 ....................
 contoh penghapusan data  pada my dql data
+//////////////////////////////////////
 delete from namaTabel where fieldFilter='value';
 ----------------------------
+Sekarang kita akan coba jalankan 
+script select data berdasarkan
+namanya, klik menu SQL masukan 
+script dibawah ini, kemudian jalankan.
+......//////////////////
+SELECT nama from karyawan
+............................
 
+SELECT FILTER
+Sql select ini berguna untuk teknik reporting, 
+ketika datanya sudah banyak ribuan atau 
+ahkan jutaan kita menggunakan select filter ini.
+
+Bagaimana jika kita ingin mengambil
+data spesifik yang hanya memiliki umur 20
+saja ? nah coba jalankan script dibawah ini.
+////////////////////////////////////
+SELECT * FROM 'karyawan' WHERE umur=20
+......................................
+
+Kita juga dapat melakukan select lebih dari 
+satu field, dimana kita bisa menggunakan 
+keyword AND, kita coba select filter
+berdasarkan field umur dan kelamin.
+
+Jalankan script dibawah ini.
+//////////////////////////////////////////////
+SELECT nama FROM 'karyawan' WHERE umur=20 AND alamat="Jakarta"
+.......................................................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.................................
 conection.php
 $conect = mysql_connect('localhost',
 'root',
