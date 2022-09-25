@@ -1,14 +1,15 @@
 # mysql-server
 belajar mysql 
 .....................
-contoh penambahan tambah data 
+contoh penambahan tambah pada my dql data 
 ............
 Update karyawan set nama='David', alamat='Bandung' where id='david';
+
 ....................
+contoh penghapusan data  pada my dql data
+delete from namaTabel where fieldFilter='value';
+----------------------------
 
-
-
------------------------------
 conection.php
 $conect = mysql_connect('localhost',
 'root',
@@ -30,7 +31,7 @@ $results = mysqli_fetch_all($query, MYSQLI_ASSOC);
 
 <html>
 <body>
-    <table border="1">
+ <table border="1">
         <tr>
             <th>Nama</th>
             <th>Alama</th>
