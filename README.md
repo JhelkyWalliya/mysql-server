@@ -1,17 +1,25 @@
 # mysql-server
 belajar mysql 
+.....................
+contoh penambahan tambah data 
+............
+Update karyawan set nama='David', alamat='Bandung' where id='david';
+....................
 
 
 
-
----------------------------------------------------
+-----------------------------
 conection.php
-$conect = mysql_connect('localhost', 'root','pasword','nama file data base')
-
+$conect = mysql_connect('localhost',
+'root',
+'pasword',
+'nama file data base')
+...........................
 menampilkan data"
 list.php
 
 menampilkan data karyawan mengunakan php dan html
+...........................
 <?php 
 
 include ('connection.php'); 
